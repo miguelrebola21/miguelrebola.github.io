@@ -1,1 +1,9 @@
-Hello World
+<div id="hello"></div>
+<script src=”https://city.power-h2020.eu/redesign_js/client.js”></script> <!-- need to include this script to talk with the api -->
+<script>
+window.onload = function(e){
+    window.apiClient = new PowerApiClient(function(a){
+      document.getElementById("hello").innerHTML= a.getUser().getAttr("name");;
+    });
+}
+</script>
